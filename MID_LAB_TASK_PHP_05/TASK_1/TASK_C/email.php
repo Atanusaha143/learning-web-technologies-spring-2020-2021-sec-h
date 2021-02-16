@@ -1,27 +1,26 @@
 <?php
 	
-	if(isset($_POST['myName']))
+	if(isset($_POST['Submit']))
 	{
-		echo "Name: ";
-		$name = $_POST['myName'];
-		echo "$name \r\n";
-
+		echo "Email: ";
+		$email = $_POST['myEmail'];
+		echo "$email";
 	}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Name</title>
+	<title>Email</title>
 </head>
 <body>
 	<form method="POST" action="">
 		<fieldset>
-			<legend>NAME</legend>
+			<legend>EMAIL</legend>
 			<table>
 				<tr>
 					<td>
-						<input type="text" name="myName" value="<?php if(isset($_POST['myName'])) { echo $_POST['myName']; } ?> ">
+						<input type="email" name="myEmail" value="<?php if(isset($_POST['myEmail'])) { echo $_POST['myEmail']; } ?> ">
 						<hr>
 						<input type="submit" name="Submit" value="Submit">
 					</td>
