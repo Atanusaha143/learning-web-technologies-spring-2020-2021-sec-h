@@ -1,9 +1,11 @@
 <?php
 	
-	if(isset($_POST['Submit']))
+	if(isset($_POST['myName']))
 	{
+		echo "Name: ";
 		$name = $_POST['myName'];
-		echo "$name";
+		echo "$name \r\n";
+
 	}
 ?>
 
@@ -19,7 +21,7 @@
 			<table>
 				<tr>
 					<td>
-						<input type="text" name="myName" value="<?php if(isset($_POST['myName'])) { echo "$myName"; } ?> ">
+						<input type="text" name="myName" value="<?php if(isset($_POST['myName'])) { echo $_POST['myName']; } ?> ">
 						<hr>
 						<input type="submit" name="Submit" value="Submit">
 					</td>
