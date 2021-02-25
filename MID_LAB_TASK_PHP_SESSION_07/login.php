@@ -30,8 +30,14 @@
 		{
 			if(isset($_SESSION['userName']) && isset($_SESSION['password']) && $_POST['name'] === $_SESSION['userName'] && $_POST['Password'] === $_SESSION['password'])
 			{
-				$_SESSION['flag'] = true;
-				header('location: home.php');
+				if(isset($_SESSION['flag']))
+				{
+					header('location: home.php');
+				}
+				else
+				{
+					echo "Please register first!";
+				}
 			}
 			else
 			{
@@ -57,6 +63,7 @@
 				<a href="login.php"> Login </a>
 				&nbsp | &nbsp
 				<a href="registration.php"> Registration </a>
+				&nbsp
 			</td>
 		</tr>
 		<tr height = "200px">
