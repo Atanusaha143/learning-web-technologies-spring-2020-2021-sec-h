@@ -17,36 +17,25 @@
 		}
 		elseif(strlen($_POST["name"])<2)
 		{
-			echo "User Name must contain at least two (2) characters";
+			echo "User Name must contain at least two (2) characters \r\n";
 			$allOk = false;
 		}
 		elseif(strlen($_POST['Password'])<8)
 		{
-			echo "Password must not be less than eight (8) characters";
-			$allOk = false;
-		}
-
-		$check = false;
-		for ($i=0; $i < strlen($_POST['Password']); $i++) { 
-			if($_POST['Password'][$i] === '@' || $_POST['Password'][$i] === '#' || $_POST['Password'][$i] === '$' || $_POST['Password'][$i] === '%')
-			{
-				$check = true;
-				break;
-			}
-		}
-
-		if($check === false)
-		{
-			echo "Please insert a special charecter";
+			echo "Password must not be less than eight (8) characters \r\n";
 			$allOk = false;
 		}
 
 		if($allOk)
 		{
-			if($_POST['name'] === $_SESSION['userName'] && $_POST['Password'] === $_SESSION['password'])
+			if(isset($_SESSION['userName']) && isset($_SESSION['password']) && $_POST['name'] === $_SESSION['userName'] && $_POST['Password'] === $_SESSION['password'])
 			{
 				$_SESSION['flag'] = true;
 				header('location: home.php');
+			}
+			else
+			{
+				echo "Please check username and password";
 			}
 		}
 	} 
