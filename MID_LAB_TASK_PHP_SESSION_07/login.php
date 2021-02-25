@@ -45,6 +45,7 @@
 		{
 			if($_POST['name'] === $_SESSION['userName'] && $_POST['Password'] === $_SESSION['password'])
 			{
+				$_SESSION['flag'] = true;
 				header('location: home.php');
 			}
 		}
