@@ -16,7 +16,7 @@
 				<a href="home.php"> <img src="logo.png" align="left"> </a>
 				Logged in as <?php print_r($_SESSION['name']) ?>
 				&nbsp | &nbsp
-				<a href=""> Logout</a>
+				<a href="publicHome.html"> Logout</a>
 			</td>
 		</tr>
 		<tr height = "200px">
@@ -25,11 +25,11 @@
 				<hr width="90%">
 				<ul>
 					<li> Dashboard </li>
-					<li> View Profile </li>
-					<li> Edit Profile </li>
+					<li> <a href="viewProfile.php"> View Profile </a></li>
+					<li> <a href="editProfile.php"> Edit Profile </a> </li>
 					<li> Change Profile Picture </li>
 					<li> Change Password </li>
-					<li> Logout </li>
+					<li> <a href="publicHome.html"> Logout </a> </li>
 				</ul>
 			</td>
 			<td colspan="2">
