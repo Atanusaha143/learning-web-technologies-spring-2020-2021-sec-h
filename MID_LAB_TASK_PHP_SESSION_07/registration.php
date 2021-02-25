@@ -50,7 +50,7 @@
 
 			if($check === false)
 			{
-				echo "Please insert (@/#/$/%) special charecter in Password field \r\n";
+				echo "Please insert (@ or # or $ or %) special charecter in Password field \r\n";
 				$allOk = false;
 			}
 		}
@@ -61,6 +61,10 @@
 			$_SESSION['password'] = $_POST['Password'];
 			$_SESSION['email'] = $_POST['Email'];
 			$_SESSION['name'] = $_POST['Name'];
+			$_SESSION['gender'] = $_POST['gender'];
+			$_SESSION['date'] = $_POST['date'];
+			$_SESSION['month'] = $_POST['month'];
+			$_SESSION['year'] = $_POST['year'];
 			header('location: login.php');
 		}
 	} 
