@@ -34,6 +34,7 @@
 				<a href="login.php"> Login </a>
 				&nbsp | &nbsp
 				<a href="registration.php"> Registration </a>
+				&nbsp
 			</td>
 		</tr>
 		<tr height = "200px">
