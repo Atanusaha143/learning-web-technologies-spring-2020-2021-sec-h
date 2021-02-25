@@ -16,7 +16,8 @@
 				<a href="home.php"> <img src="logo.png" align="left"> </a>
 				Logged in as <?php print_r($_SESSION['name']) ?>
 				&nbsp | &nbsp
-				<a href=""> Logout</a>
+				<a href="logout.php"> Logout</a>
+				&nbsp
 			</td>
 		</tr>
 		<tr height = "200px">
@@ -24,12 +25,12 @@
 				<h4> &nbsp &nbsp &nbsp Account </h4>
 				<hr width="90%">
 				<ul>
-					<li> Dashboard </li>
+					<li> <a href="home.php"> Dashboard </a></li>
 					<li> <a href="viewProfile.php"> View Profile </a></li>
 					<li> <a href="editProfile.php"> Edit Profile </a> </li>
-					<li> Change Profile Picture </li>
-					<li> Change Password </li>
-					<li> <a href="publicHome.html"> Logout </a> </li>
+					<li> <a href="changeProfilePicture.php"> Change Profile Picture </a> </li>
+					<li> <a href="changePassword.php"> Change Password </a> </li>
+					<li> <a href="logout.php"> > Logout </a> </li>
 				</ul>
 			</td>
 			<td colspan="2" align="center">
@@ -44,10 +45,10 @@
 							<td colspan="2">
 								<?php print_r($_SESSION['name']) ?>
 							</td>
-							<td rowspan="4">
+							<td rowspan="5">
 								&nbsp &nbsp &nbsp &nbsp &nbsp
 								<img src="user.png" alt="User Profile Picture" width="150" height="100">
-								<p align="center"> <a href=""> Change </a> </p>
+								<p align="center"> <a href="changeProfilePicture.php"> Change </a> </p>
 							</td>
 						</tr>
 						<tr> <td colspan="2"> <hr> </td> </tr>
