@@ -65,6 +65,7 @@
 			$_SESSION['date'] = $_POST['date'];
 			$_SESSION['month'] = $_POST['month'];
 			$_SESSION['year'] = $_POST['year'];
+			$_SESSION['flag'] = true;
 			header('location: login.php');
 		}
 	} 
@@ -85,6 +86,7 @@
 				<a href="login.php"> Login </a>
 				&nbsp | &nbsp
 				<a href="registration.php"> Registration </a>
+				&nbsp
 			</td>
 		</tr>
 		<tr height = "500px">
