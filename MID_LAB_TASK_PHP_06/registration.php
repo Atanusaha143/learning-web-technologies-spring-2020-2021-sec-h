@@ -4,7 +4,7 @@
 	<title>REGISTRATION</title>
 </head>
 <body>
-	<form method="POST" action="">
+	<form method="POST" action="fileCheck.php" enctype="multipart/form-data">
 		<fieldset>
 			<legend> <b>REGISTRATION</b></legend>
 				<table>
@@ -47,6 +47,13 @@
 							<input type="number" name="date" size="5"> /
 							<input type="number" name="month" size="5"> /
 							<input type="number" name="year" size="5"> <i> (dd/mm/yyyy) </i>
+				</fieldset>
+
+				<fieldset>
+					<legend>Upload File</legend>
+						<br>
+						<input type="file" name="uploadFile">  <br><br>
+						<input type="submit" name="submit" value="Upload">
 				</fieldset>
 			<hr>
 			<input type="reset" name="Reset" value="Reset">
