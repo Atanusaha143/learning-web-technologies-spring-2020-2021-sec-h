@@ -14,6 +14,17 @@
 
 	<div id="main_content">
 		<table border="1">
+
+			<?php
+
+				$userFile = fopen("../model/userValidationInfo.json", "r");
+				$userData = fread($userFile, filesize('../model/userValidationInfo.json'));
+				$userInfo = json_decode($userData, true);
+
+				$username = $userInfo['user'];
+				$email = $userInfo['email'];
+			?>
+
 			<tr>
 				<td>ID</td>
 				<td>NAME</td>
@@ -22,29 +33,11 @@
 			</tr>
 			<tr>
 				<td>1</td>
-				<td>alamin</td>
-				<td>alamin@gmail.com</td>
+				<td> <?php echo $username; ?> </td>
+				<td> <?php echo $email; ?> </td>
 				<td>
-					<a href="edit.php?id=1">EDIT</a> |
-					<a href="delete.php?id=1">DELETE</a> 
-				</td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>xyz</td>
-				<td>xyz@gmail.com</td>
-				<td>
-					<a href="edit.php?id=2">EDIT</a> |
-					<a href="delete.php?id=2">DELETE</a> 
-				</td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>abc</td>
-				<td>abc@gmail.com</td>
-				<td>
-					<a href="edit.php?id=3">EDIT</a> |
-					<a href="delete.php?id=3">DELETE</a> 
+					<a href="edit.php">EDIT</a> |
+					<a href="delete.php">DELETE</a> 
 				</td>
 			</tr>
 		</table>
