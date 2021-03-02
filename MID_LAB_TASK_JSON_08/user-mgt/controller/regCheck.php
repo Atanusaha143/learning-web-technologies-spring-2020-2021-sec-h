@@ -16,6 +16,8 @@
 				$userValidationInfo = [
 										 'user' => $username,
 										 'pass' => $password,
+										 'rPass' => $repass,
+										 'email' => $email,
 				      				  ];
 
 				$allData = json_encode($userValidationInfo);
