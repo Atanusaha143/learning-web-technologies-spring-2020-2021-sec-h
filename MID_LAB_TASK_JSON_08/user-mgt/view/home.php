@@ -2,9 +2,18 @@
 	$title= "Home Page";
 	include('header.php');
 ?>
+	
 
 	<div id="page_title">
-		<h1>Welcome home, <?php echo $_SESSION['current_user']['username'];?></h1>
+		<h1>Welcome home, 
+			<?php
+				$userFile = fopen("../model/userValidationInfo.json", "r");
+				$userData = fread($userFile, filesize('../model/userValidationInfo.json'));
+				$userInfo = json_decode($userData, true);
+				$username = $userInfo['user'];
+				echo $username; 
+			?>		
+		</h1>
 	</div>
 
 	<div id='nav_bar'>
