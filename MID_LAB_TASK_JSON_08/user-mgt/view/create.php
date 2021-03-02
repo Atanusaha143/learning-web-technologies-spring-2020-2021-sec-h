@@ -61,7 +61,7 @@
 	      							  ];
 
 				$allData = json_encode($userValidationInfo);
-				$userData = fopen("../model/userValidationInfo.json", "a");
+				$userData = fopen("../model/userValidationInfo.json", "w");
 				fwrite($userData, $allData);
 				fclose($userData);
 			echo "User created";
