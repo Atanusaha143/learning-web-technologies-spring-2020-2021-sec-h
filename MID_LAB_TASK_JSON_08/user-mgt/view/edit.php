@@ -33,16 +33,16 @@
 			<table>
 				<tr>
 					<td>Username</td>
-					<td><input type="text" name="username" value=" <?php echo $username ?>"> </td>
+					<td><input type="text" name="username" value="<?php echo $username ?>"> </td>
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input type="password" name="password" value=" <?php echo $password ?> "> </td>
+					<td><input type="password" name="password" value="<?php echo $password ?> "> </td>
 				</tr>
 			
 				<tr>
 					<td>Email</td>
-					<td><input type="email" name="email" value=" <?php echo $email ?> "> </td>
+					<td><input type="email" name="email" value="<?php echo $email ?> "> </td>
 				</tr>
 				<tr>
 					<td></td>
