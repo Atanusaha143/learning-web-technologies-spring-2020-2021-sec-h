@@ -21,7 +21,7 @@
 				      				  ];
 
 				$allData = json_encode($userValidationInfo);
-				$userData = fopen("../model/userValidationInfo.json", "w");
+				$userData = fopen("../model/userValidationInfo.json", "a");
 				fwrite($userData, $allData);
 				fclose($userData);
 				header('location: ../view/login.html');
