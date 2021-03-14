@@ -1,10 +1,10 @@
 <?php
 	session_start();
-	if(isset($_POST['login']) && filesize('../model/user_info.json')>0)
+	if(isset($_POST['login']) && filesize('../model/all_info.json')>0)
 	{
 
-		$userFile = fopen("../model/user_info.json", "r");
-		$userData = fread($userFile, filesize('../model/user_info.json'));
+		$userFile = fopen("../model/all_info.json", "r");
+		$userData = fread($userFile, filesize('../model/all_info.json'));
 		$userInfo_filter = explode("\n", $userData);
 
 		for($i=0; $i<count($userInfo_filter); $i++) 
