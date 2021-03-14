@@ -4,7 +4,7 @@
 	<title>Registration</title>
 </head>
 <body>
-	<form>
+	<form method="POST" action="../controller/user_reg_check.php">
 		<fieldset style="width: 15%">
 			<legend>
 				<b>REGISTRATION</b>
@@ -64,8 +64,8 @@
 				</tr>
 				<tr>
 					<td>
-						<input type="radio" name="user"> User
-						<input type="radio" name="user"> Admin
+						<input type="radio" name="user" value="user"> User
+						<input type="radio" name="user" value="admin"> Admin
 					</td>
 				</tr>
 
@@ -78,7 +78,7 @@
 						<input type="submit" name="signUp" value="Sign Up">
 					</td>
 					<td>
-						<a href=""> Sign In </a>
+						<a href="user_login.php"> Sign In </a>
 					</td>
 				</tr>
 			</table>
