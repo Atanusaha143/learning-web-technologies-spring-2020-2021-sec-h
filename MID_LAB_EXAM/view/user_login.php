@@ -4,7 +4,7 @@
 	<title>Log in</title>
 </head>
 <body>
-	<form method="POST" action="user_log_check.php">
+	<form method="POST" action="../controller/user_log_check.php">
 		<fieldset style="width: 15%">
 			<legend>
 				<b>LOGIN</b>

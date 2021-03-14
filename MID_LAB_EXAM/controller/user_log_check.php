@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	if(isset($_POST['login']) && filesize('../model/user_info.json')>0)
 	{
 
@@ -11,6 +12,7 @@
 				$userInfo = json_decode($userInfo_filter[$i], true);
 				$id = $userInfo['id'];
 				$password = $userInfo['password'];
+				$type = $userInfo['type'];
 
 				if($id == "" || $password == "")
 				{
@@ -19,14 +21,22 @@
 				else
 				{
 
-					if($username == $_POST['id'] && $password == $_POST['password'])
+					if($id == $_POST['id'] && $password == $_POST['password'])
 					{
 						$_SESSION['flag'] = true;
 						$_SESSION['name'] = $userInfo['name'];
 						$_SESSION['id'] = $userInfo['id'];
 						$_SESSION['password'] = $userInfo['password'];
 						$_SESSION['type'] = $userInfo['type'];
-						header('location: ../view/user_home.php');
+						
+						if($type == 'user')
+						{
+							header('location: ../view/user_home.php');
+						}
+						else
+						{
+							header('location: ../view/admin_home.php');
+						}
 					}
 					else
 					{
