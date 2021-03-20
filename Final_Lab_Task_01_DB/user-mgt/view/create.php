@@ -59,7 +59,7 @@
 			$repass = $_POST['repass'];
 			$email = $_POST['email'];
 			$connection = mysqli_connect('localhost','root','','user-mgt');
-			$sql = "insert into registration (username,password,confirm_password,email) values('$username','$password','$repass','$email')";
+			$sql = "insert into registration (id,username,password,email) values('','$username','$password','$email')";
 			$result = mysqli_query($connection,$sql);
 			echo "User created";
 		}
