@@ -13,34 +13,30 @@
 	</div>
 
 	<div id="main_content">
-		<table border="1">
+		<?php
 
-			<?php
+			$connection = mysqli_connect('localhost','root','','user-mgt');
+			$sql = "select * from registration";
+			$result = mysqli_query($connection, $sql);
 
-				$userFile = fopen("../model/userValidationInfo.json", "r");
-				$userData = fread($userFile, filesize('../model/userValidationInfo.json'));
-				$userInfo = json_decode($userData, true);
+			echo "<table border = 1 cellspacing = 0>
+				<tr>
+					<td>Username</td>
+					<td>Password</td>
+					<td>Email</td>
+				</tr>";
 
-				$username = $userInfo['user'];
-				$email = $userInfo['email'];
-			?>
+			while($row = mysqli_fetch_assoc($result))
+			{
+				echo "<tr>
+						 <td>{$row['username']}</td>
+						 <td>{$row['password']}</td>
+						 <td>{$row['email']}</td>
+					</tr>";
+			}
 
-			<tr>
-				<td>ID</td>
-				<td>NAME</td>
-				<td>EMAIL</td>
-				<td>ACTION</td>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td> <?php echo $username; ?> </td>
-				<td> <?php echo $email; ?> </td>
-				<td>
-					<a href="edit.php">EDIT</a> |
-					<a href="delete.php">DELETE</a> 
-				</td>
-			</tr>
-		</table>
+			echo "</table>";
+		?>
 	</div>
 
 <?php include('footer.php'); ?>
