@@ -1,6 +1,7 @@
 <?php
 	$title= "User list Page";
 	include('header.php');
+	require_once('../model/dbConnection.php');
 ?>
 
 	<div id="page_title">
@@ -15,7 +16,7 @@
 	<div id="main_content">
 		<?php
 
-			$connection = mysqli_connect('localhost','root','','user-mgt');
+			$connection = getConnection();
 			$sql = "select * from registration";
 			$result = mysqli_query($connection, $sql);
 
@@ -24,6 +25,7 @@
 					<td>Username</td>
 					<td>Password</td>
 					<td>Email</td>
+					<td>Operations</td>
 				</tr>";
 
 			while($row = mysqli_fetch_assoc($result))
@@ -32,6 +34,7 @@
 						 <td>{$row['username']}</td>
 						 <td>{$row['password']}</td>
 						 <td>{$row['email']}</td>
+						 <td> <a href='edit.php'> Edit</a> | <a href='delete.php'> Delete </a> </td>
 					</tr>";
 			}
 
