@@ -1,13 +1,13 @@
 <?php
 	session_start();
-	
+	require_once('../model/dbConnection.php');
 	if(isset($_POST['submit'])){
 		
 		if($_POST['username'] == "" || $_POST['password'] == ""){
 			echo "null submission...";
 		}else{
 
-			$connection = mysqli_connect('localhost','root','','user-mgt');
+			$connection = getConnection();
 			$sql = "select * from registration";
 			$result = mysqli_query($connection, $sql);
 
