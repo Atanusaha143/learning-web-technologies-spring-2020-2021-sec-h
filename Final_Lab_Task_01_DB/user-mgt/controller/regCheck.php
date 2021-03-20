@@ -1,5 +1,6 @@
 <?php
-
+	
+	require_once('../model/dbConnection.php');
 	if(isset($_POST['signup'])){
 
 		$username = $_POST['username'];
@@ -14,8 +15,8 @@
 			if($password == $repass){
 
 				// Storing using DB
-				$connection = mysqli_connect('localhost','root','','user-mgt');
-				$sql = "insert into registration (username,password,confirm_password,email) values('$username','$password','$repass','$email')";
+				$connection = getConnection();
+				$sql = "insert into registration (id,username,password,email) values('','$username','$password','$email')";
 				$result = mysqli_query($connection,$sql);
 				header('location: ../view/login.html');
 			}else{
