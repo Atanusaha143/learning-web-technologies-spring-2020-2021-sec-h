@@ -1,20 +1,17 @@
 <?php
 	$title= "Edit Page";
 	include('header.php');
-
-	//echo $_GET['id'];
-	//echo $_GET['email'];
+	require_once('../model/dbConnection.php');
 ?>
 
 <?php
 
-	$userFile = fopen("../model/userValidationInfo.json", "r");
-	$userData = fread($userFile, filesize('../model/userValidationInfo.json'));
-	$userInfo = json_decode($userData, true);
-
-	$username = $userInfo['user'];
-	$password = $userInfo['pass'];
-	$email = $userInfo['email'];
+	// retrive data from database
+	$id = $_GET['id'];
+	$connection = getConnection();
+	$sql = "select * from registration where id='{$id}'";
+	$result = mysqli_query($connection,$sql);
+	$row = mysqli_fetch_assoc($result);
 ?>
 
 <div id="page_title">
@@ -33,16 +30,16 @@
 			<table>
 				<tr>
 					<td>Username</td>
-					<td><input type="text" name="username" value="<?php echo $username ?>"> </td>
+					<td><input type="text" name="username" value="<?php echo $row['username'] ?>"> </td>
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input type="password" name="password" value="<?php echo $password ?> "> </td>
+					<td><input type="password" name="password" value="<?php echo $row['password'] ?> "> </td>
 				</tr>
 			
 				<tr>
 					<td>Email</td>
-					<td><input type="email" name="email" value="<?php echo $email ?> "> </td>
+					<td><input type="email" name="email" value="<?php echo $row['email'] ?> "> </td>
 				</tr>
 				<tr>
 					<td></td>
@@ -60,16 +57,13 @@
 
 	if(isset($_POST['update']))
 	{
-		$userValidationInfo = [
-						 'user' => $_POST['username'],
-						 'pass' => $_POST['password'],
-						 'email' => $_POST['email'],
-      				  ];
-
-		$allData = json_encode($userValidationInfo);
-		$userData = fopen("../model/userValidationInfo.json", "w");
-		fwrite($userData, $allData);
-		fclose($userData);
-		header('location: user_list.php');
+		// update database
+	 	$sql = "update registration set username='{$_POST['username']}' where id='{$id}'";
+	 	$result = mysqli_query($connection,$sql);
+	 	$sql = "update registration set password='{$_POST['password']}' where id='{$id}'";
+	 	$result = mysqli_query($connection,$sql);
+	 	$sql = "update registration set email='{$_POST['email']}' where id='{$id}'";
+	 	$result = mysqli_query($connection,$sql);
+	 	echo "Profile updated!";
 	}
 ?>
