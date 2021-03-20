@@ -54,6 +54,13 @@
 		}else{
 
 			//create user
+			$username = $_POST['username'];
+			$password = $_POST['password'];
+			$repass = $_POST['repass'];
+			$email = $_POST['email'];
+			$connection = mysqli_connect('localhost','root','','user-mgt');
+			$sql = "insert into registration (username,password,confirm_password,email) values('$username','$password','$repass','$email')";
+			$result = mysqli_query($connection,$sql);
 			echo "User created";
 		}
 	}
