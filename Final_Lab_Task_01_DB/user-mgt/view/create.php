@@ -1,6 +1,7 @@
 <?php
 	$title= "Create Page";
 	include('header.php');
+	require_once('../model/dbConnection.php');
 ?>
 
 
@@ -58,7 +59,7 @@
 			$password = $_POST['password'];
 			$repass = $_POST['repass'];
 			$email = $_POST['email'];
-			$connection = mysqli_connect('localhost','root','','user-mgt');
+			$connection = getConnection();
 			$sql = "insert into registration (id,username,password,email) values('','$username','$password','$email')";
 			$result = mysqli_query($connection,$sql);
 			echo "User created";
