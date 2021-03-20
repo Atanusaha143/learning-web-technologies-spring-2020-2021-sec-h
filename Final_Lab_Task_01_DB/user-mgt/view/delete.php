@@ -1,12 +1,12 @@
 <?php
 	$title= "Delete Page";
 	include('header.php');
-
-	$userFile = fopen("../model/userValidationInfo.json", "r");
-	$userData = fread($userFile, filesize('../model/userValidationInfo.json'));
-	$userInfo = json_decode($userData, true);
-
-	$username = $userInfo['user'];
+	require_once('../model/dbConnection.php');
+	$id = $_GET['id'];
+	$connection = getConnection();
+	$sql = "select * from registration where id='{$id}'";
+	$result = mysqli_query($connection,$sql);
+	$row = mysqli_fetch_assoc($result);
 ?>
 
 <div id="page_title">
@@ -23,7 +23,7 @@
 	<form method="post" action="">
 		<table>
 			<tr>
-				<td> <?php echo "Are you sure to delete $username's account?" ?> </td>
+				<td> <?php echo "Are you sure to delete {$row['username']}'s account?" ?> </td>
 			</tr>
 			<tr>
 				<td>
@@ -38,17 +38,10 @@
 	include('footer.php');
 	if(isset($_POST['delete']))
 	{
-		$userValidationInfo = [
-								 'user' => ".",
-								 'pass' => ".",
-								 'rPass' => ".",
-								 'email' => ".",
-		      				  ];
-
-		$allData = json_encode($userValidationInfo);
-		$userData = fopen("../model/userValidationInfo.json", "w");
-		fwrite($userData, $allData);
-		fclose($userData);
-		header('location: ../');
+		$id = $_GET['id'];
+		$connection = getConnection();
+		$sql = "delete from registration where id='{$id}'";
+		$result = mysqli_query($connection,$sql);
+		header('location: user_list.php');
 	}
 ?>
