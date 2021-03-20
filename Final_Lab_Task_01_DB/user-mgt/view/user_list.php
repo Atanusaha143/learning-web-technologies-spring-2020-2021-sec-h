@@ -34,7 +34,7 @@
 						 <td>{$row['username']}</td>
 						 <td>{$row['password']}</td>
 						 <td>{$row['email']}</td>
-						 <td> <a href='edit.php'> Edit</a> | <a href='delete.php'> Delete </a> </td>
+						 <td> <a href='edit.php?id={$row['id']}'> Edit</a> | <a href='delete.php?id={$row['id']}'> Delete </a> </td>
 					</tr>";
 			}
 
