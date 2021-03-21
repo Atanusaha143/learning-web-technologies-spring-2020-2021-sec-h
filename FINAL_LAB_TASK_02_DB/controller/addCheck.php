@@ -14,7 +14,13 @@
 		}
 		else
 		{
-			$productDetails = array('name' => $name, 'buyingPrice' => $bPrice, 'sellingPrice' => $sPrice);
+			$displayable = "No";
+			if(isset($_POST['check']))
+			{
+				global $displayable;
+				$displayable = "Yes";
+			}	
+			$productDetails = array('name' => $name, 'buyingPrice' => $bPrice, 'sellingPrice' => $sPrice, 'displayable' => $displayable);
 			$connection = getConnection();
 			$check = insertProduct($productDetails);
 			if($check)
@@ -25,7 +31,7 @@
 			{
 				echo "Error occured!";
 			}
+
 		}
 	}
-
 ?>
