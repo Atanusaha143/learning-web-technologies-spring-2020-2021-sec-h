@@ -9,7 +9,7 @@
 		<br>
 		<a href="view/displayProduct.php"> Display Product </a>
 		<br>
-		<a href="searchProduct.php">Search Product</a>
+		<a href="view/searchProduct.php">Search Product</a>
 	</center>
 </body>
 </html>
