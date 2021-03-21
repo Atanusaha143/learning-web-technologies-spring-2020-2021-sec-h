@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2021 at 08:57 AM
+-- Generation Time: Mar 21, 2021 at 03:17 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -30,16 +30,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `products` (
   `id` int(6) UNSIGNED NOT NULL,
   `name` varchar(30) NOT NULL,
-  `buyingPrice` int(10) NOT NULL,
-  `sellingPrice` int(10) DEFAULT NULL
+  `buyingPrice` int(15) NOT NULL,
+  `sellingPrice` int(15) NOT NULL,
+  `displayable` varchar(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `buyingPrice`, `sellingPrice`) VALUES
-(1, 'Mouse', 450, 350);
+INSERT INTO `products` (`id`, `name`, `buyingPrice`, `sellingPrice`, `displayable`) VALUES
+(1, 'Mouse', 350, 450, 'No');
 
 --
 -- Indexes for dumped tables
@@ -59,7 +60,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
