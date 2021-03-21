@@ -3,7 +3,7 @@
 	function insertProduct($productDetails)
 	{
 		$conn = getConnection();
-		$sql = "insert into products values('', '{$productDetails['name']}', '{$productDetails['buyingPrice']}', '{$productDetails['sellingPrice']}')";
+		$sql = "insert into products values('', '{$productDetails['name']}', '{$productDetails['buyingPrice']}', '{$productDetails['sellingPrice']}', '{$productDetails['displayable']}')";
 		
 		if(mysqli_query($conn, $sql))
 		{
@@ -30,7 +30,8 @@
 		return $users;
 	}
 
-	function getProductById($id){
+	function getProductById($id)
+	{
 
 		$conn = getConnection();
 		$sql = "select * from products where id='{$id}'";
@@ -40,10 +41,11 @@
 		return $row;
 	}
 
-	function updateProduct($productDetails){
+	function updateProduct($id, $productDetails)
+	{
 
 		$conn = getConnection();
-		$sql = "update products set name = {$productDetails['name']}', buyingPrice='{$productDetails['buyingPrice']}', sellingPrice='{$productDetails['sellingPrice']}'";
+		$sql = "update products set name = '{$productDetails['name']}', buyingPrice='{$productDetails['buyingPrice']}', sellingPrice='{$productDetails['sellingPrice']}', displayable='{$productDetails['displayable']}' where id='{$id}'";
 		
 		if(mysqli_query($conn, $sql))
 		{
@@ -55,9 +57,10 @@
 		}
 	}
 
-	function deleteProduct($id){
+	function deleteProduct($id)
+	{
 		$conn = getConnection();
-		$sql = "delete from products where id={$id}";
+		$sql = "delete from products where id='{$id}'";
 		
 		if(mysqli_query($conn, $sql))
 		{
@@ -67,5 +70,15 @@
 		{
 			return false;
 		}
+	}
+
+	function searchByName($name)
+	{
+		$conn = getConnection();
+		$sql = "select * from products where name='{$name}'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+
+		return $row;
 	}
 ?>
