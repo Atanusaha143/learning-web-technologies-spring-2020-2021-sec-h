@@ -18,13 +18,13 @@
 					<td>Buying Price</td>
 				</tr>
 				<tr>
-					<td><input type="number" name="buyingPrice" value=""> </td>
+					<td><input type="text" name="buyingPrice" value=""> </td>
 				</tr>
 				<tr>
 					<td>Selling Price</td>
 				</tr>
 				<tr>
-					<td><input type="number" name="sellingPrice" value=""> </td>
+					<td><input type="text" name="sellingPrice" value=""> </td>
 				</tr>
 				<tr>
 					<td>
