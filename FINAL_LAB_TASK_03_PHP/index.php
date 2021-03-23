@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Author: Atanu Saha -->
 <html>
 <head>
 	<title>Registration</title>
@@ -73,7 +73,6 @@
 						</select>
 					</td>
 				</tr>
-
 				<tr>
 					<td> <hr> </td>
 				</tr>
