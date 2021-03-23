@@ -1,4 +1,4 @@
-<?php
+<?php //Author: Atanu Saha
 
 	$host = 'localhost';
 	$dbUser = 'root';
