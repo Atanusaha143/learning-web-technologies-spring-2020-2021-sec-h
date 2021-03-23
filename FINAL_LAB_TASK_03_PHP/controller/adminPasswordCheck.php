@@ -1,5 +1,5 @@
 <?php
-	
+	//Author: Atanu Saha
 	require_once('../model/userModel.php');
 	require_once('../model/dbConnection.php');
 	if(isset($_POST['change']))
