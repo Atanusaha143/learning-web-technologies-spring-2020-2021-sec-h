@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Author: Atanu Saha -->
 <html>
 <head>
 	<title>Log in</title>
