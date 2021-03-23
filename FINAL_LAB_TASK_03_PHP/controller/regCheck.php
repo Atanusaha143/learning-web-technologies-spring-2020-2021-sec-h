@@ -1,4 +1,4 @@
-<?php
+<?php //Author: Atanu Saha
 	
 	require_once('../model/dbConnection.php');
 	require_once('../model/userModel.php');
