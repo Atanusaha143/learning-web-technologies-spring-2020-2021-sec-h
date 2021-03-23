@@ -1,5 +1,5 @@
 <?php
-
+	//Author: Atanu Saha
 	require_once('../model/dbConnection.php');
 	require_once('../model/userModel.php');
 	$userList = getAllUser();
@@ -17,7 +17,6 @@
 				<th>EMAIL</td>
 				<th>USER TYPE</td>
 			</tr>";
-
 		for($i = 0; $i < count($userList); $i++)
 		{
 			echo "<tr>
