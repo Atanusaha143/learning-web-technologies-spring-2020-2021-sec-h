@@ -17,6 +17,6 @@
 					</fieldset>
 				</td>
 			</tr>
-		</table>
+		</table> <!-- Author: Atanu Saha -->
 	</form>
 </center>
