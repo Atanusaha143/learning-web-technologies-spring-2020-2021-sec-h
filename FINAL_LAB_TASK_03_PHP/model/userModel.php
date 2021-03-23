@@ -56,19 +56,4 @@
 			return false;
 		}
 	}
-
-	function deleteUser($id)
-	{
-		$conn = getConnection();
-		$sql = "delete from users where id='{$id}'";
-		
-		if(mysqli_query($conn, $sql))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
 ?>
