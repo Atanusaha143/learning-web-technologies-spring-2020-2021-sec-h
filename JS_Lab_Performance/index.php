@@ -62,7 +62,7 @@
 								</tr>
 								<tr>
 									<td>
-										<input type="email" name="Email" style="width: 90%">
+										<input type="email" name="Email" id="email" style="width: 90%">
 									</td>
 								</tr>
 								<tr>
@@ -70,7 +70,7 @@
 								</tr>
 								<tr>
 									<td>
-										<input type="text" name="UserName" style="width: 90%">
+										<input type="text" name="UserName" id="username" style="width: 90%">
 									</td>
 								</tr>
 								<tr>
@@ -78,7 +78,7 @@
 								</tr>
 								<tr>
 									<td>
-										<input type="password" name="Password" style="width: 90%">
+										<input type="password" name="Password" id="password" style="width: 90%">
 									</td>
 								</tr>
 								<tr>
@@ -86,7 +86,7 @@
 								</tr>
 								<tr>
 									<td>
-										<input type="password" name="rPassword" style="width: 90%">
+										<input type="password" name="rPassword" id="confirmPassword" style="width: 90%">
 									</td>
 								</tr>
 								<tr>
@@ -94,7 +94,7 @@
 								</tr>
 								<tr>
 									<td>
-										<input type="text" name="PhoneNumber" style="width: 90%">
+										<input type="text" name="PhoneNumber" id="phone" style="width: 90%">
 									</td>
 								</tr>
 								<tr>
@@ -102,7 +102,7 @@
 								</tr>
 								<tr>
 									<td>
-										<select name = "Gender" style="width: 50%">
+										<select name = "Gender" id="gender" style="width: 50%">
 											<option value="Male"> Male </option> Male
 											<option value="Female"> Female </option> Female
 											<option value="Others"> Other </option> Other
@@ -168,6 +168,64 @@
 		{
 			alert("First charecter must be capital!");
 			return false;
+		}
+
+		let email = document.getElementById('email').value;
+		if(email == "")
+		{
+			alert("Email must be filled out");
+			return false;
+		}
+
+		let username = document.getElementById('username').value;
+		if(username == "")
+		{
+			alert("Username must be filled out");
+			return false;
+		}
+		else if(username.length < 4)
+		{
+			alert("Username must contain 4 charecters");
+			return false;
+		}
+
+		let password = document.getElementById('password').value;
+		if(password == "")
+		{
+			alert("Password must be filled out");
+			return false;
+		}
+		else if(password.length < 8)
+		{
+			alert("Password must contain 8 charecters");
+			return false;
+		}
+
+		let confirmpass = document.getElementById('confirmPassword').value;
+		if(confirmpass == "")
+		{
+			alert("Confirm Password must be filled out");
+			return false;
+		}
+		else if(password != confirmpass)
+		{
+			alert("Password and Confirm Password mismatch");
+			return false;
+		}
+
+		let phone = document.getElementById('phone').value;
+		for(let i =0; i<phone.length; i++)
+		{
+			let curr = phone[i];
+			if(curr > 47 && curr < 58 )
+			{
+				continue;
+			}
+			else
+			{
+				alert("Phone Number must contain only digit");
+				return false;	
+			}
 		}
 	}
 </script>
